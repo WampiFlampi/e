@@ -35,6 +35,6 @@ elemh' a (x : xs) b = elemh' a xs (a == x)
 elem' a (x : xs) = elemh' a xs (a == x)
 
 
+reverse' [] = []
 
- 
-
+reverse' (x : xs) = x : reverse' xs
