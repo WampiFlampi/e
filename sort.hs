@@ -22,3 +22,13 @@ merge (x : xs) ls = less ++ [x] ++ merge xs more
                         more = [b | b <- ls, b > x ]
 
 
+msplit :: [Integer] -> ([Integer],[Integer])
+msplit xs = (as,bs)
+            where 
+                m = toInteger (div (length xs) 2)
+                as = [a | (a,i) <- zip xs [1..], i <= m]
+                bs = [b | (b,i) <- zip xs [1..], i > m ]
+
+ 
+                  
+

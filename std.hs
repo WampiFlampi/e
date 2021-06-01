@@ -1,5 +1,3 @@
-
-
 and' [] = True
 and' (False : _ ) = False
 
@@ -9,20 +7,20 @@ and' (x : xs) = and' xs
 
 concat'  [] = []
 
-concat' (x : xs) = x ++ concat' xs
+concat' (xs : xss) = xs ++ concat' xss
 
 
 
 
 replicate' 0 _ = []
 
-replicate' n a = [a] ++ replicate' (n-1) a
+replicate' n a = a : replicate' (n-1) a
 
 
 
-index' 0 (x : xs) = x
+index' 0 (x : _ ) = x
 
-index' n (x : xs) = index' (n-1) xs
+index' n ( _ : xs) = index' (n-1) xs
  
 
 
